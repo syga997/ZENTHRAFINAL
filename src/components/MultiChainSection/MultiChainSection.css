@@ -1,66 +1,118 @@
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-
-.multi-chain-section {
-  padding: 100px 20px;
-  background: #0d0d0d;
+.multichain-section {
+  background: linear-gradient(135deg, #1c1c1c 0%, #2e2e2e 100%);
+  padding: 60px 20px;
+  color: #eee;
   text-align: center;
-  color: white;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.multi-title {
-  font-size: 2.5rem;
-  color: #a020f0;
-  margin-bottom: 60px;
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #a95fff; /* királyi lila */
+  text-shadow: 0 0 10px #a95fff88;
 }
 
-.orbit-container {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  max-width: 600px;
+.chains-container {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  max-width: 900px;
   margin: 0 auto;
+  position: relative;
 }
 
-.center-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(145deg, #a020f0, #0d0d0d);
-  padding: 30px 40px;
-  border-radius: 50%;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: white;
-  z-index: 10;
-  box-shadow: 0 0 25px #a020f0;
+.chain-card {
+  background: #222;
+  border-radius: 16px;
+  width: 140px;
+  height: 140px;
+  box-shadow: 0 0 20px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.chain-card.hovered {
+  transform: rotateY(15deg) rotateX(10deg) translateZ(30px);
+  box-shadow: 0 0 30px var(--chain-color);
 }
 
 .chain-logo {
-  width: 50px;
-  height: 50px;
-  animation: pulse 2s infinite ease-in-out;
+  width: 70px;
+  height: 70px;
+  filter: drop-shadow(0 0 2px var(--chain-color));
+  transition: filter 0.3s ease;
 }
 
-.orbit {
+.chain-card.hovered .chain-logo {
+  filter: drop-shadow(0 0 12px var(--chain-color));
+}
+
+.tooltip {
   position: absolute;
-  top: 50%;
+  bottom: -60px;
   left: 50%;
-  transform-origin: center center;
+  transform: translateX(-50%);
+  background: rgba(169, 95, 255, 0.9);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 12px #a95fffaa;
 }
 
-.orbit-0 { animation: orbit 10s linear infinite; }
-.orbit-1 { animation: orbit 12s linear infinite; }
-.orbit-2 { animation: orbit 14s linear infinite; }
-.orbit-3 { animation: orbit 16s linear infinite; }
+.chain-card.hovered .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: -70px;
+}
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.9; }
+.connecting-light {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  width: 420px;
+  height: 6px;
+  background: linear-gradient(90deg, #a95fff33, #a95fff88, #a95fff33);
+  border-radius: 6px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center left;
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connecting-light.active {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Mobilon stackelünk */
+@media (max-width: 600px) {
+  .chains-container {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .chain-card {
+    width: 120px;
+    height: 120px;
+  }
+  .tooltip {
+    width: 200px;
+    font-size: 0.85rem;
+  }
 }
