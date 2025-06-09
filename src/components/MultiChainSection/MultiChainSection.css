@@ -1,0 +1,66 @@
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+.multi-chain-section {
+  padding: 100px 20px;
+  background: #0d0d0d;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.multi-title {
+  font-size: 2.5rem;
+  color: #a020f0;
+  margin-bottom: 60px;
+}
+
+.orbit-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.center-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(145deg, #a020f0, #0d0d0d);
+  padding: 30px 40px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  z-index: 10;
+  box-shadow: 0 0 25px #a020f0;
+}
+
+.chain-logo {
+  width: 50px;
+  height: 50px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+}
+
+.orbit-0 { animation: orbit 10s linear infinite; }
+.orbit-1 { animation: orbit 12s linear infinite; }
+.orbit-2 { animation: orbit 14s linear infinite; }
+.orbit-3 { animation: orbit 16s linear infinite; }
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
