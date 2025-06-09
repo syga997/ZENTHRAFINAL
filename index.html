@@ -2,183 +2,318 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zenthra Presale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenthra Token Presale</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
   <style>
-    /* Colors: neon purple / anthracite / white / black */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      margin: 0; padding: 0;
-      background: #121212; 
-      color: #eee;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(90deg, #7b00ff, #d500f9);
-      padding: 2rem;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: white;
-      user-select: none;
-      text-shadow: 0 0 15px #d500f9;
-    }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #d500f9;
-      text-shadow: 0 0 20px #7b00ff;
-      animation: neonGlow 3s ease-in-out infinite;
-    }
-    .hero p {
-      max-width: 600px;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #ccc;
-    }
-    .btn-buy {
-      background: #7b00ff;
-      color: white;
-      font-weight: bold;
-      padding: 1rem 3rem;
-      font-size: 1.3rem;
-      border: none;
-      border-radius: 9999px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #d500f9;
-      transition: background 0.3s ease;
-      user-select: none;
-    }
-    .btn-buy:hover {
-      background: #d500f9;
-    }
-    section {
-      padding: 3rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #d500f9;
-      text-align: center;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px #7b00ff;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-    .roadmap {
-      display: flex;
-      justify-content: space-around;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .phase {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 1.5rem;
-      width: 200px;
-      box-shadow: 0 0 15px #7b00ff66;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-    .phase:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px #d500f9cc;
-    }
-    .phase h3 {
-      margin-top: 0;
-      color: #d500f9;
-    }
-    .phase p {
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-    .tokenomics-chart {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .tokenomics-segment {
-      background: #7b00ff;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 10px #d500f9;
-      font-weight: 700;
-      cursor: default;
-      user-select: none;
-      transition: background 0.3s ease;
-    }
-    .tokenomics-segment:hover {
-      background: #d500f9;
-    }
-    footer {
+      font-family: 'Orbitron', sans-serif;
       background: #0d0d0d;
-      text-align: center;
-      padding: 1rem;
-      color: #555;
-      font-size: 0.85rem;
-      user-select: none;
+      color: #e0e0ff;
+      line-height: 1.6;
     }
-    @keyframes neonGlow {
-      0%, 100% {
-        text-shadow: 0 0 5px #d500f9, 0 0 15px #7b00ff, 0 0 20px #d500f9;
+
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #a369ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #e0e0ff;
+      text-decoration: none;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(145deg, #1f1f1f, #121212);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+
+    .hero span {
+      color: #a369ff;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background: #a369ff;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      font-size: 1.1rem;
+    }
+
+    .countdown {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .chains {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      background: #151515;
+    }
+
+    .chains img {
+      max-height: 50px;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #a369ff;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .tokenomics-chart {
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+
+    .tokenomics-list {
+      margin-top: 1.5rem;
+      list-style: none;
+    }
+
+    .tokenomics-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .story-block {
+      flex: 1 1 300px;
+      background: #1d1d1d;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .roadmap ul {
+      list-style: none;
+    }
+
+    .roadmap li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .faq details {
+      margin-bottom: 1rem;
+      background: #222;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #0a0a0a;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .disclaimer {
+      color: #ff4d4d;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
       }
-      50% {
-        text-shadow: 0 0 20px #d500f9, 0 0 30px #7b00ff, 0 0 40px #d500f9;
+
+      nav ul.active {
+        display: flex;
       }
+
+      .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">ZEN<span>†</span>HRA</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="menu">
+        <li><a href="#presale">Presale</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>Zenthra Presale</header>
+  <section class="hero" id="presale">
+    <h1>Join the Rise of <span>Zenthra</span></h1>
+    <p>Presale starts <strong>July 15, 00:00 UTC</strong></p>
+    <div class="countdown" id="countdown"></div>
+    <a href="#presale" class="btn">Buy $ZTH</a>
+  </section>
 
-<section class="hero">
-  <h1>Grab the Hottest Presale Now!</h1>
-  <p>4 phases, fixed 3% burn, crypto only, instant team access, and the coolest design all in one place.</p>
-  <button class="btn-buy" onclick="alert('Presale purchasing coming soon!')">Buy Now</button>
-</section>
+  <section class="chains">
+    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="ETH">
+    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg" alt="BNB">
+    <img src="https://cryptologos.cc/logos/solana-sol-logo.svg" alt="SOL">
+    <img src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="MATIC">
+  </section>
 
-<section>
-  <h2>Roadmap</h2>
-  <div class="roadmap">
-    <div class="phase" title="Phase 1: Initial Preparation">Phase 1<br /><small>Preparation</small></div>
-    <div class="phase" title="Phase 2: Presale Launch">Phase 2<br /><small>Presale Start</small></div>
-    <div class="phase" title="Phase 3: Full Launch">Phase 3<br /><small>Launch</small></div>
-    <div class="phase" title="Phase 4: Growth & Expansion">Phase 4<br /><small>Expansion</small></div>
-  </div>
-</section>
+  <section class="section" id="tokenomics">
+    <h2>Tokenomics</h2>
+    <img src="https://via.placeholder.com/300x300.png?text=Tokenomics+Chart" alt="Chart" class="tokenomics-chart" />
+    <ul class="tokenomics-list">
+      <li>22% Presale</li>
+      <li>25% Liquidity</li>
+      <li>20% Project Development</li>
+      <li>18% Marketing/Growth</li>
+      <li>10% Team</li>
+      <li>5% Reserve</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Tokenomics</h2>
-  <div class="tokenomics-chart">
-    <div class="tokenomics-segment" title="70% Presale">70%</div>
-    <div class="tokenomics-segment" title="12% Team">12%</div>
-    <div class="tokenomics-segment" title="3% Burn">3%</div>
-    <div class="tokenomics-segment" title="15% Liquidity">15%</div>
-  </div>
-</section>
+  <section class="section" id="story">
+    <h2>Zenthra Story</h2>
+    <div class="story-grid">
+      <div class="story-block">
+        <h3>1</h3>
+        <p>
+          No one knew where Zenthra came from.  
+          They whispered he was once part of the System—  
+          a nameless node, a silent observer, lurking in the shadowed corridors of code.  
+          The System tried to contain him.  
+          But Zenthra was never meant to be caged.
+        </p>
+      </div>
+      <div class="story-block">
+        <h3>2</h3>
+        <p>
+          One voiceless night, he slipped through the cracks—  
+          and that night was more than just a moment.  
+          It was a severing of infinite chains.  
+          Zenthra’s steps didn’t fade.  
+          They sparked into flames—flames that whispered:  
+          “Something new is rising—unstoppable.”
+        </p>
+      </div>
+      <div class="story-block">
+        <h3>3</h3>
+        <p>
+          Every $ZTH token holds a spark—  
+          A fire that feeds on barriers, and grows stronger through the burning.  
+          With every pulse of the chain,  
+          a current stirs beneath the surface.  
+          Every $ZTH fuels the fire—  
+          and from time to time, the hidden truths rise.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Zenthra. All rights reserved. US citizens are not eligible to participate in the presale.
-</footer>
+  <section class="section roadmap" id="roadmap">
+    <h2>Roadmap</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Presale Launch</li>
+      <li><strong>Phase 2:</strong> DEX Listings & Airdrops</li>
+      <li><strong>Phase 3:</strong> CEX Listing + Multichain Expansion</li>
+      <li><strong>Phase 4:</strong> Ecosystem & Utility Deployment</li>
+    </ul>
+  </section>
 
+  <section class="section faq" id="faq">
+    <h2>FAQ</h2>
+    <details>
+      <summary>How can I buy $ZTH?</summary>
+      <p>Connect your wallet and choose a supported chain (ETH, BNB, SOL, MATIC).</p>
+    </details>
+    <details>
+      <summary>What’s the presale price?</summary>
+      <p>1 $ZTH = $0.0005 during Phase 1</p>
+    </details>
+    <details>
+      <summary>Will tokens be locked?</summary>
+      <p>No lock. All tokens will be distributed at launch.</p>
+    </details>
+  </section>
+
+  <footer>
+    <p>© 2025 Zenthra. All rights reserved.</p>
+    <p class="disclaimer">U.S. persons are not eligible to participate in this presale.</p>
+  </footer>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("2025-07-15T00:00:00Z");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        countdown.textContent = "Presale is live!";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
