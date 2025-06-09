@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.7 311.7">
-  <linearGradient id="a" x1="360.879" x2="141.213" y1="27.645" y2="314.2" gradientUnits="userSpaceOnUse">
-    <stop offset="0" stop-color="#00ffa3"/>
-    <stop offset="1" stop-color="#dc1fff"/>
-  </linearGradient>
-  <path fill="url(#a)" d="M13.7 50.8c-3.4 0-6.2 2.8-6.2 6.2v38.6c0 1.7.7 3.3 1.9 4.4l66.1 65.1c2.4 2.4 6.3 2.4 8.7 0l212.3-210.4c2.4-2.4 2.4-6.3 0-8.7l-40.6-40.3c-2.4-2.4-6.3-2.4-8.7 0L13.7 50.8z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="solanaGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00FFA3"/>
+      <stop offset="100%" stop-color="#DC1FFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#000"/>
+  <path fill="url(#solanaGradient)" d="M100 120 L300 120 L260 160 L60 160 Z M100 190 L300 190 L260 230 L60 230 Z M100 260 L300 260 L260 300 L60 300 Z"/>
 </svg>
